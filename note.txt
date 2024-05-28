@@ -1,11 +1,2 @@
-git log--oneline
-git--checkout--
-git checkout--main
-MVC=Model View Controllers
-Model=Database
-DB Data = controllers
-php artisians make::Model-m build migrations add write
-Bootstrap is the not CSS Bootstrap in laravel.
-php artisians db::seeds for 100 users.
-{{asset("css/app.css")}}   // CSS Link
-php artisian ::dbseeds
+
+

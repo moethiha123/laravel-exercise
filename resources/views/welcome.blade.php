@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+    @include('nav')
+    <h1>Home Page</h1>
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
