@@ -7,6 +7,8 @@
     @if (session('message'))
         {{ session('message') }}
     @endif
+
+
 </div>
 <ul>
 
@@ -21,5 +23,7 @@
                 </form>
             </li>
         @endforeach
+
+
     </ul>
 </ul>

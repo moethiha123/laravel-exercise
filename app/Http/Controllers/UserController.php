@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
+        return $request;
 
         $newUser = $request->validate([
             "name" => "required|max:255|string",
@@ -40,11 +40,7 @@ class UserController extends Controller
             "password" => "required|min:8",
         ]);
         User::create($newUser);
-        // $user = new User();
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->password = $request->password;
-        // $user->save();
+
         return redirect()->route('users.index')->with("message", "user create successfully");
     }
 
