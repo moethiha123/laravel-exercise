@@ -32,7 +32,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request;
+
+        $newUser = $request->validate([
+            "name" => "required|max:255|string",
+            "email" => "required|email|unique:users,email",
+            "password" => "required|min:8",
+        ]);
+        User::create($newUser);
+        // $user = new User();
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = $request->password;
+        // $user->save();
+        return redirect()->route('users.index')->with("message", "user create successfully");
     }
 
     /**
@@ -62,8 +75,9 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('users.index')->with("message", "user delete successfully");
     }
 }
